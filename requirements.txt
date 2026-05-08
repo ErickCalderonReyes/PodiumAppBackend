@@ -4,3 +4,4 @@ pyodbc
 redis
 stripe
 python-dotenv
+gunicorn
