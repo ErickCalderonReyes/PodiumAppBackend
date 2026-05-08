@@ -4,7 +4,7 @@ from flask_cors import CORS
 import pyodbc
 import redis
 import stripe
-
+#hh
 app = Flask(__name__)
 # Permitimos el acceso solo desde tu URL de Angular configurada en Azure
 CORS(app, origins=[os.environ.get('CORS_ORIGIN')])
