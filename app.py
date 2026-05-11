@@ -27,9 +27,13 @@ cache = redis.StrictRedis(
     ssl=True
 )
 
-@app.route('/')
+@app.route('/health') # Cambia '/' por '/health' para probar
 def health_check():
-    return jsonify({"status": "Podium API Online", "version": "1.0.0"}), 200
+    return jsonify({
+        "status": "Podium API Online", 
+        "version": "1.0.0",
+        "database_configured": os.environ.get('AZURE_SQL_CONNECTIONSTRING') is not None
+    }), 200
 
 @app.route('/candidates', methods=['GET'])
 def get_candidates():
